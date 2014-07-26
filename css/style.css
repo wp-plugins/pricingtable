@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+.wp-picker-container .iris-picker{
+position: absolute;
+  z-index: 10;
+}
+#pricingtable_admin{
+background:none repeat scroll 0 0 #ddd;
+border-collapse:collapse;
+margin-top:20px;
+position:relative;
+width:auto;
+}
+#pricingtable_admin tr{
+}
+#pricingtable_admin td{
+border:1px solid #999;
+margin:0;
+min-width:180px;
+padding:13px 5px;
+position:relative;
+font-size:12px;
+}
+.header-pack{
+background:url("header-pack.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+border-top:2px dotted #fff;
+padding-top:10px;
+/*transition*/
+-webkit-transition:height 0.5s ease 0s;
+   -moz-transition:height 0.5s ease 0s;
+     -o-transition:height 0.5s ease 0s;
+        transition:height 0.5s ease 0s;
+cursor:pointer;
+}
+.header-pack.lock{
+height:0;
+overflow:hidden;
+border:1px solid #ddd;
+/*transition*/
+-webkit-transition:all 0.5s ease 0s;
+   -moz-transition:all 0.5s ease 0s;
+     -o-transition:all 0.5s ease 0s;
+        transition:all 0.5s ease 0s;
+}
+.header-pack.lock:hover{
+border:1px solid #3baefa;
+}
+.header-pack.open{
+border-bottom:2px solid #b6b6b6;
+height:370px;
+overflow:visible;
+}
+.price-pack{
+background:url("header-pack.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+border-top:2px dotted #fff;
+padding-top:10px;
+/*transition*/
+-webkit-transition:height 0.5s ease 0s;
+   -moz-transition:height 0.5s ease 0s;
+     -o-transition:height 0.5s ease 0s;
+        transition:height 0.5s ease 0s;
+cursor:pointer;
+}
+.price-pack.lock{
+height:0;
+overflow:hidden;
+border:1px solid #ddd;
+/*transition*/
+-webkit-transition:all 0.5s ease 0s;
+   -moz-transition:all 0.5s ease 0s;
+     -o-transition:all 0.5s ease 0s;
+        transition:all 0.5s ease 0s;
+}
+.price-pack.lock:hover{
+border:1px solid #3baefa;
+}
+.price-pack.open{
+border-bottom:2px solid #b6b6b6;
+height:130px;
+overflow:visible;
+}
+.signup-pack{
+background:url("header-pack.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+border-top:2px dotted #fff;
+padding-top:10px;
+/*transition*/
+-webkit-transition:height 0.5s ease 0s;
+   -moz-transition:height 0.5s ease 0s;
+     -o-transition:height 0.5s ease 0s;
+        transition:height 0.5s ease 0s;
+cursor:pointer;
+}
+.signup-pack.lock{
+height:0;
+overflow:hidden;
+border:1px solid #ddd;
+/*transition*/
+-webkit-transition:all 0.5s ease 0s;
+   -moz-transition:all 0.5s ease 0s;
+     -o-transition:all 0.5s ease 0s;
+        transition:all 0.5s ease 0s;
+}
+.signup-pack.lock:hover{
+border:1px solid #3baefa;
+}
+.signup-pack.open{
+border-bottom:2px solid #b6b6b6;
+height:150px;
+overflow:visible;
+}
+/*Fron page CSS*/
+	
+	
+.pricingtable-area{
+background:url("wood_pattern.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+box-sizing:border-box;
+height:auto;
+padding:50px 0;
+text-align:center;
+width:100%;
+}
+.pricingtable-area ul{
+}
+.pricingtable-area li{
+}
+/*Flat Theme*/
+
+.pricingtable-themes-flat{
+}
+.pricingtable-themes-flat ul.pricingtable-columns-container{
+/*box-shadow*/
+-webkit-box-shadow:0 0 4px -2px #000;
+   -moz-box-shadow:0 0 4px -2px #000;
+        box-shadow:0 0 4px -2px #000;
+display:inline-block;
+list-style:none outside none;
+margin:30px 6px;
+padding:0;
+vertical-align:top;
+width:200px;
+/*transition*/
+-webkit-transition:all 0.5s ease 0s;
+   -moz-transition:all 0.5s ease 0s;
+     -o-transition:all 0.5s ease 0s;
+        transition:all 0.5s ease 0s;
+}
+.pricingtable-themes-flat li.pricingtable-columns{
+list-style:none outside none;
+margin:0;
+padding:0;
+}
+.pricingtable-themes-flat ul.pricingtable-items-container{
+margin:0;
+padding:0;
+}
+.pricingtable-themes-flat li.pricingtable-items{
+background:none repeat scroll 0 0 #01bc59;
+color:#fff;
+font-size:14px;
+list-style:none outside none;
+margin:0;
+padding:10px 0;
+position:relative;
+text-align:center;
+}
+.pricingtable-themes-flat li.pricingtable-items-odd{
+background:none repeat scroll 0 0 #ececec;
+color:#474747;
+}
+.pricingtable-themes-flat li.pricingtable-items-even{
+background:none repeat scroll 0 0 #f1f1f1;
+color:#474747;
+}
+.pricingtable-themes-flat li.pricingtable-header{
+padding:15px 0;
+overflow:hidden;
+}
+.pricingtable-themes-flat li.pricingtable-header .pricingtable-header-image{
+/*box-shadow*/
+-webkit-box-shadow:none;
+   -moz-box-shadow:none;
+        box-shadow:none;
+height:auto;
+margin-top:20px;
+max-height:150px;
+padding:0;
+width:91%;
+}
+.pricingtable-themes-flat li.pricingtable-header iframe{
+margin-top:20px;
+width:100%;
+}
+.pricingtable-themes-flat li span.pricingtable-header-name{
+clear:both;
+display:block;
+font-size:30px;
+}
+.pricingtable-themes-flat li span.pt-hd{
+clear:both;
+display:block;
+font-size:13px;
+height:70px;
+padding:0 10px;
+}
+.pricingtable-themes-flat li.pricingtable-price{
+padding:10px 0;
+}
+.pricingtable-themes-flat li span.pricingtable-price-value{
+clear:both;
+display:block;
+font-size:35px;
+}
+.pricingtable-themes-flat li span.pt-pd{
+clear:both;
+display:block;
+font-size:13px;
+}
+.pricingtable-themes-flat li.pricingtable-signup{
+padding:15px 0;
+}
+.pricingtable-themes-flat li a.pricingtable-signup-name{
+background:none repeat scroll 0 0 #038d44;
+/*border-radius*/
+-webkit-border-radius:3px;
+   -moz-border-radius:3px;
+        border-radius:3px;
+color:#fff;
+display:inline;
+font-size:16px;
+padding:4px 15px;
+text-decoration:none;
+width:auto;
+}
