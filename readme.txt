@@ -12,7 +12,7 @@
 
 == Description ==
 
-PricingTable by http://pricing-table.com
+### PricingTable by http://pricing-table.com
 
 
 
