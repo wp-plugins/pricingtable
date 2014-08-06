@@ -74,10 +74,10 @@ PricingTable support youtube.com and vimeo.com video<br />
 to display videos on column simplay insert video url as following:<br />
 
 <strong>for youtube:</strong><br />
-https://www.youtube.com/watch?v=PPLr-3viHOw<br /><br />
+`https://www.youtube.com/watch?v=PPLr-3viHOw`<br /><br />
 
 <strong>for vimeo:</strong><br />
-http://vimeo.com/98571984
+`http://vimeo.com/98571984`
 
 
 == Screenshots ==
