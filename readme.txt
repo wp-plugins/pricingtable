@@ -12,7 +12,7 @@
 
 == Description ==
 
-<h3>PricingTable by <a href="http://pricing-table.com/" rel="nofollow">http://pricing-table.com/</a></h3>
+PricingTable by http://pricing-table.com
 
 
 
@@ -22,7 +22,7 @@ Variety of support for style, themes and table items to display as your needs.
 
 Could be possible to generate hosting style pricing table grid, flat grid, hide blank filed or display blank field with cross icon.
 
-<h3>Live demos:  <a href="http://pricing-table.com/premium-pricing-table-plugin-for-wordpress/" rel="nofollow">http://pricing-table.com/premium-pricing-table-plugin-for-wordpress/</a></h3>
+Live demos: http://pricing-table.com/premium-pricing-table-plugin-for-wordpress
 
 <br />
 
@@ -82,9 +82,9 @@ http://vimeo.com/98571984
 
 == Screenshots ==
 
-1. screenshot-1.
-2. screenshot-2.
-3. screenshot-3.
+1. screenshot-1
+2. screenshot-2
+3. screenshot-3
 
 == Changelog ==
 
