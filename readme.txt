@@ -14,7 +14,7 @@
 
 ### PricingTable by http://pricing-table.com
 
-
+<br />
 
 Long waited premium pricing table plugin for WordPress published to display pricing grid on your WordPress site. this plugin generate pure HTML and CSS3 grid to display pricing table data.
 
@@ -22,18 +22,21 @@ Variety of support for style, themes and table items to display as your needs.
 
 Could be possible to generate hosting style pricing table grid, flat grid, hide blank filed or display blank field with cross icon.
 
-Live demos: http://pricing-table.com/premium-pricing-table-plugin-for-wordpress
-
 <br />
+*   [See the Live demos!&raquo;](http://pricing-table.com/premium-pricing-table-plugin-for-wordpress "Live demo")
+*   [Documentation &raquo;](http://pricing-table.com/pricingtable-documentation/)
+<br />
+
 
 <strong>Plugin Features</strong><br />
 
+* Unlimited pricing table anywhere.
 * Unlimited Column & Row.
+* Display YouTube, vimeo video on each column.
 * Easy to use anywhere via short-codes.
 * Header description text.
 * Price Description text.
 * Display image for each column.
-* Display YouTube, vimeo video on each column.
 * Column Header background color.
 * Column Price background color.
 * Column Price background color.
