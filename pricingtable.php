@@ -1,9 +1,9 @@
 <?php
 /*
 Plugin Name: PricingTable
-Plugin URI: http://pricing-table.com/premium-pricing-table-plugin-for-wordpress/
+Plugin URI: http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/
 Description: Long waited pricing table plugin for WordPress published to display pricing grid on your WordPress site.
-Version: 1.1
+Version: 1.2
 Author: wpkids
 Author URI: http://pricing-table.com
 License: GPLv2 or later
@@ -49,7 +49,7 @@ register_activation_hook(__FILE__, 'pricingtable_activation');
 
 function pricingtable_activation()
 	{
-		$pricingtable_version= "1.1";
+		$pricingtable_version= "1.2";
 		update_option('pricingtable_version', $pricingtable_version); //update plugin version.
 		
 		$pricingtable_customer_type= "free"; //customer_type "pro", "free"
@@ -89,7 +89,19 @@ add_shortcode('pricingtable', 'pricingtable_display');
 
 
 
+add_action('admin_menu', 'pricingtable_menu_init');
 
+
+	
+function pricingtable_menu_help(){
+	include('pricingtable-help.php');	
+}
+
+function pricingtable_menu_init() {
+
+	
+	add_submenu_page('edit.php?post_type=pricingtable', __('Help & Upgrade','menu-wpt'), __('Help & Upgrade','menu-wpt'), 'manage_options', 'pricingtable_menu_help', 'pricingtable_menu_help');
+}
 
 
 

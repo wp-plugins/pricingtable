@@ -4,7 +4,7 @@
 	Tags:  free pricing table, price table, pricing table, pricing table plugin, pricing tables, wordpress pricing table, pricing, pricing plugin, pricing grid, price grid
 	Requires at least: 3.8
 	Tested up to: 3.9.1
-	Stable tag: 1.1
+	Stable tag: 1.2
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -91,6 +91,9 @@ to display videos on column simplay insert video url as following:<br />
 
 == Changelog ==
 
+
+	= 1.2 =
+    * 07/08/2014 Added help page.
 
 	= 1.1 =
     * 07/08/2014 Added option for background image.
