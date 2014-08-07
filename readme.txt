@@ -91,5 +91,9 @@ to display videos on column simplay insert video url as following:<br />
 
 == Changelog ==
 
+
+	= 1.1 =
+    * 07/08/2014 Added option for background image.
+	
 	= 1.0 =
     * 22/07/2014 Initial release.
