@@ -2,8 +2,8 @@
 /*
 Plugin Name: PricingTable
 Plugin URI: http://pricing-table.com/premium-pricing-table-plugin-for-wordpress/
-Description:  Long waited pricing table plugin for WordPress published to display pricing grid on your WordPress site.
-Version: 1.0
+Description: Long waited pricing table plugin for WordPress published to display pricing grid on your WordPress site.
+Version: 1.1
 Author: wpkids
 Author URI: http://pricing-table.com
 License: GPLv2 or later
@@ -11,6 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 define('pricingtable_plugin_url', WP_PLUGIN_URL . '/' . plugin_basename( dirname(__FILE__) ) . '/' );
+define('pricingtable_plugin_dir', plugin_dir_path( __FILE__ ) );
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-meta.php');
 require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-body.php');

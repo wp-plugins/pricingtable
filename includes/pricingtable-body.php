@@ -4,6 +4,10 @@ function pricingtable_body($post_id)
 	{
 
 
+		$pricingtable_bg_img = get_post_meta( $post_id, 'pricingtable_bg_img', true );
+
+
+
 		$pricingtable_themes = get_post_meta( $post_id, 'pricingtable_themes', true );
 
 		$pricingtable_total_column = get_post_meta( $post_id, 'pricingtable_total_column', true );
@@ -32,7 +36,7 @@ function pricingtable_body($post_id)
 
 
 				$pricingtable_body = "";
-				$pricingtable_body.= "<div class='pricingtable-area' >";
+				$pricingtable_body.= '<div class="pricingtable-area" style="background:url('.$pricingtable_bg_img.') repeat scroll 0 0 rgba(0, 0, 0, 0);" >';
 				$pricingtable_body.= "<div class='pricingtable-container pricingtable-themes-".$pricingtable_themes."' >";
 				$j = 1;
 				

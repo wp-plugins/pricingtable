@@ -31,7 +31,6 @@ function pricingtable_posttype_register() {
                 'supports' => array('title'),
 				'menu_icon' => 'dashicons-media-spreadsheet',
 				
-
           );
  
         register_post_type( 'pricingtable' , $args );
@@ -64,7 +63,7 @@ function meta_boxes_pricingtable_input( $post ) {
 	wp_nonce_field( 'meta_boxes_pricingtable_input', 'meta_boxes_pricingtable_input_nonce' );
 	
 	
-
+	$pricingtable_bg_img = get_post_meta( $post->ID, 'pricingtable_bg_img', true );
 	$pricingtable_themes = get_post_meta( $post->ID, 'pricingtable_themes', true );
 	$pricingtable_total_row = get_post_meta( $post->ID, 'pricingtable_total_row', true );
 	$pricingtable_total_column = get_post_meta( $post->ID, 'pricingtable_total_column', true );
@@ -146,6 +145,110 @@ function meta_boxes_pricingtable_input( $post ) {
         
         </td>
     </tr> 
+
+
+
+
+
+
+<script>
+jQuery(document).ready(function(jQuery)
+	{
+			jQuery(".pricingtable_bg_img_list li").click(function()
+				{ 	
+					jQuery('.pricingtable_bg_img_list li.bg-selected').removeClass('bg-selected');
+					jQuery(this).addClass('bg-selected');
+					
+					var pricingtable_bg_img = jQuery(this).attr('data-url');
+
+					jQuery('#pricingtable_bg_img').val(pricingtable_bg_img);
+					
+				})	
+
+					
+	})
+
+</script>
+
+
+
+
+
+
+
+
+    <tr valign="top">
+
+        <td style="vertical-align:middle;">
+        
+        <strong>Price table Background Image</strong><br /><br /> 
+        
+
+<?php
+
+
+
+	$dir_path = pricingtable_plugin_dir."css/background/";
+	$filenames=glob($dir_path."*.png*");
+
+
+	$pricingtable_bg_img = get_post_meta( $post->ID, 'pricingtable_bg_img', true );
+	
+	if(empty($pricingtable_bg_img))
+		{
+		$pricingtable_bg_img = "";
+		}
+
+
+	$count=count($filenames);
+	
+
+	$i=0;
+	echo "<ul class='pricingtable_bg_img_list' >";
+
+	while($i<$count)
+		{
+			$filelink= str_replace($dir_path,"",$filenames[$i]);
+			
+			$filelink= pricingtable_plugin_url."css/background/".$filelink;
+			
+			
+			if($pricingtable_bg_img==$filelink)
+				{
+					echo "<li class='bg-selected' data-url='".$filelink."'>";
+				}
+			else
+				{
+					echo "<li data-url='".$filelink."'>";
+				}
+			
+			
+			echo "<img  width='70px' height='50px' src='".$filelink."' />";
+			echo "</li>";
+			$i++;
+		}
+		
+	echo "</ul>";
+	
+	echo "<input style='width:80%;' value='".$pricingtable_bg_img."'    placeholder='Please select image or left blank' id='pricingtable_bg_img' name='pricingtable_bg_img'  type='text' />";
+
+
+
+?>
+        </td>
+    </tr> 
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -309,11 +412,11 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 						
 					if(!empty($pricingtable_column_featured[$i]))
 						{
-						$pricingtable_admin_cell .=  " checked='checked'/><label for='pricingtable_column_featured[".$i."]'>Remove Featured</label>";
+						$pricingtable_admin_cell .=  " checked='checked'/><label title='Click to remove featured column.' for='pricingtable_column_featured[".$i."]'>Remove Featured</label>";
 						}
 					else
 						{
-						$pricingtable_admin_cell .=  " /><label for='pricingtable_column_featured[".$i."]'>Make Featured</label>";
+						$pricingtable_admin_cell .=  " /><label title='Select to make featured column.' for='pricingtable_column_featured[".$i."]'>Make Featured</label>";
 						}
 
 					
@@ -368,7 +471,7 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 						
 						
 						
-					$pricingtable_admin_cell .=  "<br />Header Image or Video<br /><input class='pricingtable_cell_header_image' name='pricingtable_cell_header_image[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_image[$i]."' /><br />";	
+					$pricingtable_admin_cell .=  "<br />Header Image or Video(url)<br /><input class='pricingtable_cell_header_image' name='pricingtable_cell_header_image[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_image[$i]."' /><br />";	
 						
 					$pricingtable_admin_cell .=  "<br />Header Description Text<br /><input class='pricingtable_cell_header_description' name='pricingtable_cell_header_description[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_description[$i]."' /><br />";
 					
@@ -387,11 +490,11 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 					
 					if(!empty($pricingtable_column_featured[$i]))
 						{
-						$pricingtable_admin_cell .=  " checked='checked'/><label for='pricingtable_column_featured[".$i."]'>Remove Featured</label>";
+						$pricingtable_admin_cell .=  " checked='checked'/><label title='Click to remove featured column.' for='pricingtable_column_featured[".$i."]'>Remove Featured</label>";
 						}
 					else
 						{
-						$pricingtable_admin_cell .=  " /><label for='pricingtable_column_featured[".$i."]'>Make Featured</label>";
+						$pricingtable_admin_cell .=  " /><label title='Select to make featured column.' for='pricingtable_column_featured[".$i."]'>Make Featured</label>";
 						}
 
 					
@@ -448,7 +551,7 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 					
 					$pricingtable_admin_cell .=  "<br />Header Background Color<br /><input class='pricingtable_cell_header_bg_color' name='pricingtable_cell_header_bg_color[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_bg_color[$i]."' /><br />";
 					
-					$pricingtable_admin_cell .=  "<br />Header Image or Video<br /><input class='pricingtable_cell_header_image' name='pricingtable_cell_header_image[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_image[$i]."' /><br />";					
+					$pricingtable_admin_cell .=  "<br />Header Image or Video(url)<br /><input class='pricingtable_cell_header_image' name='pricingtable_cell_header_image[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_image[$i]."' /><br />";					
 					
 					$pricingtable_admin_cell .=  "<br />Header Description Text<br /><input class='pricingtable_cell_header_description' name='pricingtable_cell_header_description[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_description[$i]."' /><br />";						
 					
@@ -625,7 +728,7 @@ function meta_boxes_pricingtable_save( $post_id ) {
   /* OK, its safe for us to save the data now. */
 
   // Sanitize user input.
-
+	$pricingtable_bg_img = sanitize_text_field( $_POST['pricingtable_bg_img'] );	
 	$pricingtable_themes = sanitize_text_field( $_POST['pricingtable_themes'] );	
 	$pricingtable_total_row = sanitize_text_field( $_POST['pricingtable_total_row'] );
 	$pricingtable_total_column = sanitize_text_field( $_POST['pricingtable_total_column'] );
@@ -653,7 +756,7 @@ function meta_boxes_pricingtable_save( $post_id ) {
 	$pricingtable_cell_header_text = stripslashes_deep( $_POST['pricingtable_cell_header_text'] );	
 
   // Update the meta field in the database.
-
+	update_post_meta( $post_id, 'pricingtable_bg_img', $pricingtable_bg_img );	
 	update_post_meta( $post_id, 'pricingtable_themes', $pricingtable_themes );	
 	update_post_meta( $post_id, 'pricingtable_total_row', $pricingtable_total_row );
 	update_post_meta( $post_id, 'pricingtable_total_column', $pricingtable_total_column );
