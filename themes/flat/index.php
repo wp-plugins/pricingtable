@@ -1,7 +1,19 @@
 <?php
 
-function pricingtable_body($post_id)
+function pricingtable_body_flat($post_id)
 	{
+
+
+
+		$pricingtable_ribbons = get_option( 'pricingtable_ribbons' );
+
+
+
+
+
+
+
+
 
 
 		$pricingtable_bg_img = get_post_meta( $post_id, 'pricingtable_bg_img', true );
@@ -121,7 +133,21 @@ function pricingtable_body($post_id)
 									
 									$pricingtable_body.=  '<li style=" background-color:'.$pricingtable_cell_header_bg_color[$j].'" class="pricingtable-items pricingtable-header">';
 									
-									$pricingtable_body.=  "<span class='pricingtable-ribbon ribbon-".$pricingtable_column_ribbon[$j]."'></span>";	
+									if(empty($pricingtable_ribbons[$pricingtable_column_ribbon[$j]]))
+										{
+
+											$pricingtable_body.=  '<span class="pricingtable-ribbon ribbon-'.$pricingtable_column_ribbon[$j].'"></span>';
+									
+										}
+										
+									else
+										{
+											$pricingtable_body.=  '<span style="background:url('.$pricingtable_ribbons[$pricingtable_column_ribbon[$j]].') repeat scroll 0 0 rgba(0, 0, 0, 0)" class="pricingtable-ribbon ribbon-'.$pricingtable_column_ribbon[$j].'"></span>';	
+										}
+										
+								
+									
+
 									
 									
 									$pricingtable_body.=  "<span class='pricingtable-header-name'>".$pricingtable_cell_header_text[$j]."</span>";

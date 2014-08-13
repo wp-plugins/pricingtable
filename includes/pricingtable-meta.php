@@ -140,7 +140,7 @@ function meta_boxes_pricingtable_input( $post ) {
         
         <select name="pricingtable_themes" >
         	<option value="flat" <?php if($pricingtable_themes=="flat")echo "selected"; ?>>Flat</option>
-
+        	<option value="rounded" <?php if($pricingtable_themes=="rounded")echo "selected"; ?>>Rounded</option>
         </select>
         
         </td>

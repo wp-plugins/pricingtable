@@ -3,7 +3,7 @@
 Plugin Name: PricingTable
 Plugin URI: http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/
 Description: Long waited pricing table plugin for WordPress published to display pricing grid on your WordPress site.
-Version: 1.2
+Version: 1.3
 Author: wpkids
 Author URI: http://pricing-table.com
 License: GPLv2 or later
@@ -14,9 +14,13 @@ define('pricingtable_plugin_url', WP_PLUGIN_URL . '/' . plugin_basename( dirname
 define('pricingtable_plugin_dir', plugin_dir_path( __FILE__ ) );
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-meta.php');
-require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-body.php');
 require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-functions.php');
 
+
+//Themes php files
+
+require_once( plugin_dir_path( __FILE__ ) . 'themes/flat/index.php');
+require_once( plugin_dir_path( __FILE__ ) . 'themes/rounded/index.php');
 
 
 
@@ -25,15 +29,18 @@ function pricingtable_init_scripts()
 		wp_enqueue_script('jquery');
 		wp_enqueue_script('pricingtable_js', plugins_url( '/js/scripts.js' , __FILE__ ) , array( 'jquery' ));
 		
-		wp_localize_script( 'pricingtable_js', 'pricingtable_ajax', array( 'pricingtable_ajaxurl' => admin_url( 'admin-ajax.php')));
+		wp_localize_script('pricingtable_js', 'pricingtable_ajax', array( 'pricingtable_ajaxurl' => admin_url( 'admin-ajax.php')));
 		wp_enqueue_style('pricingtable_style', pricingtable_plugin_url.'css/style.css');
 		wp_enqueue_style('pricingtable_style_common', pricingtable_plugin_url.'css/style-common.css');
-
+		
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'pricingtable_color_picker', plugins_url('/js/color-picker.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
 		
+
 		
-		
+		// Style for themes
+		wp_enqueue_style('pricingtable-style-flat', pricingtable_plugin_url.'themes/flat/style.css');			
+		wp_enqueue_style('pricingtable-style-rounded', pricingtable_plugin_url.'themes/rounded/style.css');	
 		
 		
 	}
@@ -49,7 +56,7 @@ register_activation_hook(__FILE__, 'pricingtable_activation');
 
 function pricingtable_activation()
 	{
-		$pricingtable_version= "1.2";
+		$pricingtable_version= "1.3";
 		update_option('pricingtable_version', $pricingtable_version); //update plugin version.
 		
 		$pricingtable_customer_type= "free"; //customer_type "pro", "free"
@@ -68,11 +75,29 @@ function pricingtable_display($atts, $content = null ) {
 
 			$post_id = $atts['id'];
 
+			$pricingtable_themes = get_post_meta( $post_id, 'pricingtable_themes', true );
+
+			$pricingtable_display ="";
+
+			if($pricingtable_themes== "flat")
+				{
+					
+					$pricingtable_display.= pricingtable_body_flat($post_id);
+				}
+				
+			else if($pricingtable_themes=="rounded")
+				{
+					$pricingtable_display.= pricingtable_body_rounded($post_id);
+				}
 
 
-$pricingtable_display ="";
 
-$pricingtable_display.= pricingtable_body($post_id);
+
+
+
+
+
+
 return $pricingtable_display;
 
 
@@ -97,10 +122,26 @@ function pricingtable_menu_help(){
 	include('pricingtable-help.php');	
 }
 
+
+function pricingtable_menu_settings(){
+	include('pricingtable-settings.php');	
+}
+
+
+
 function pricingtable_menu_init() {
 
-	
+
+	add_submenu_page('edit.php?post_type=pricingtable', __('Settings','menu-wpt'), __('Settings','menu-wpt'), 'manage_options', 'pricingtable_menu_settings', 'pricingtable_menu_settings');	
+		
 	add_submenu_page('edit.php?post_type=pricingtable', __('Help & Upgrade','menu-wpt'), __('Help & Upgrade','menu-wpt'), 'manage_options', 'pricingtable_menu_help', 'pricingtable_menu_help');
+	
+	
+
+	
+	
+	
+	
 }
 
 

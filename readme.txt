@@ -4,7 +4,7 @@
 	Tags:  free pricing table, price table, pricing table, pricing table plugin, pricing tables, wordpress pricing table, pricing, pricing plugin, pricing grid, price grid
 	Requires at least: 3.8
 	Tested up to: 3.9.1
-	Stable tag: 1.2
+	Stable tag: 1.3
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,7 +77,7 @@ PricingTable support youtube.com and vimeo.com video<br />
 to display videos on column simplay insert video url as following:<br />
 
 <strong>for youtube:</strong><br />
-`https://www.youtube.com/watch?v=PPLr-3viHOw`<br /><br />
+`https://www.youtube.com/watch?v=PPLr-3viHOw`
 
 <strong>for vimeo:</strong><br />
 `http://vimeo.com/98571984`
@@ -85,12 +85,19 @@ to display videos on column simplay insert video url as following:<br />
 
 == Screenshots ==
 
-1. screenshot-1
-2. screenshot-2
-3. screenshot-3
+1. screenshot-1 Normal View
+2. screenshot-2 Video & Images
+3. screenshot-3 Star Rate
+4. screenshot-4 rounded theme
+5. screenshot-5 rounded theme hover
 
 == Changelog ==
 
+
+
+	= 1.3 =
+    * 13/08/2014 Added New Theme Rounded.
+	* 13/08/2014 Custom ribbons on setting page.
 
 	= 1.2 =
     * 07/08/2014 Added help page.
