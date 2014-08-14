@@ -59,7 +59,7 @@ function pricingtable_activation()
 		$pricingtable_version= "1.3";
 		update_option('pricingtable_version', $pricingtable_version); //update plugin version.
 		
-		$pricingtable_customer_type= "free"; //customer_type "pro", "free"
+		$pricingtable_customer_type= "free"; //customer_type "free"
 		update_option('pricingtable_customer_type', $pricingtable_customer_type); //update plugin version.
 
 	}
