@@ -3,7 +3,7 @@
 Plugin Name: PricingTable
 Plugin URI: http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/
 Description: Long waited pricing table plugin for WordPress published to display pricing grid on your WordPress site.
-Version: 1.3
+Version: 1.4
 Author: wpkids
 Author URI: http://pricing-table.com
 License: GPLv2 or later
@@ -21,6 +21,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-functions.php
 
 require_once( plugin_dir_path( __FILE__ ) . 'themes/flat/index.php');
 require_once( plugin_dir_path( __FILE__ ) . 'themes/rounded/index.php');
+require_once( plugin_dir_path( __FILE__ ) . 'themes/sonnet/index.php');
 
 
 
@@ -40,7 +41,8 @@ function pricingtable_init_scripts()
 		
 		// Style for themes
 		wp_enqueue_style('pricingtable-style-flat', pricingtable_plugin_url.'themes/flat/style.css');			
-		wp_enqueue_style('pricingtable-style-rounded', pricingtable_plugin_url.'themes/rounded/style.css');	
+		wp_enqueue_style('pricingtable-style-rounded', pricingtable_plugin_url.'themes/rounded/style.css');
+		wp_enqueue_style('pricingtable-style-sonnet', pricingtable_plugin_url.'themes/sonnet/style.css');		
 		
 		
 	}
@@ -56,7 +58,7 @@ register_activation_hook(__FILE__, 'pricingtable_activation');
 
 function pricingtable_activation()
 	{
-		$pricingtable_version= "1.3";
+		$pricingtable_version= "1.4";
 		update_option('pricingtable_version', $pricingtable_version); //update plugin version.
 		
 		$pricingtable_customer_type= "free"; //customer_type "free"
@@ -81,7 +83,6 @@ function pricingtable_display($atts, $content = null ) {
 
 			if($pricingtable_themes== "flat")
 				{
-					
 					$pricingtable_display.= pricingtable_body_flat($post_id);
 				}
 				
@@ -90,7 +91,10 @@ function pricingtable_display($atts, $content = null ) {
 					$pricingtable_display.= pricingtable_body_rounded($post_id);
 				}
 
-
+			else if($pricingtable_themes=="sonnet")
+				{
+					$pricingtable_display.= pricingtable_body_sonnet($post_id);
+				}
 
 
 
