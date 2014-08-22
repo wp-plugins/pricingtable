@@ -45,8 +45,9 @@ Could be possible to generate hosting style pricing table grid, flat grid, hide 
 * Tool-tip text anywhere.
 * Background Image for table area.
 
-
-
+<br />
+<strong>Video Tutorial Here.</strong>
+https://www.youtube.com/watch?v=h3StmDVu5tE
 
 == Installation ==
 
