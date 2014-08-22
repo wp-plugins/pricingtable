@@ -8,7 +8,7 @@
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-	PricingTable to display pricing grid on your WordPress site.
+	Responsive and mobile ready, HTML and CSS3 pricing table grid for your wordpress site.
 
 == Description ==
 
