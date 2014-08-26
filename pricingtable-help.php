@@ -42,7 +42,7 @@
 
 <br /><br />
 <h3>Get Premium Vesrion:</h3><br />
-<strong style="font-size:20px;">Price: $5(USD)</strong><br />
+<strong style="font-size:20px;">Price: $10(USD)</strong><br />
 Plugin Link: <a target="_blank" href="http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/">http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/</a><br /><br /> <br />
 <img src="<?php echo  pricingtable_plugin_url; ?>/css/pricingtable-pro.png" />
 </p>
