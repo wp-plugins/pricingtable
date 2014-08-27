@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: PricingTable
-Plugin URI: http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/
+Plugin URI: http://paratheme.com/items/pricing-table-plugin-for-wordpress/
 Description: Long waited pricing table plugin for WordPress published to display pricing grid on your WordPress site.
-Version: 1.4
-Author: wpkids
-Author URI: http://pricing-table.com
+Version: 1.5
+Author: paratheme
+Author URI: http://paratheme.com/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -58,7 +58,7 @@ register_activation_hook(__FILE__, 'pricingtable_activation');
 
 function pricingtable_activation()
 	{
-		$pricingtable_version= "1.4";
+		$pricingtable_version= "1.5";
 		update_option('pricingtable_version', $pricingtable_version); //update plugin version.
 		
 		$pricingtable_customer_type= "free"; //customer_type "free"
