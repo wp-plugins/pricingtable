@@ -23,7 +23,7 @@ Variety of support for style, themes and table items to display as your needs.
 Could be possible to generate hosting style pricing table grid, flat grid, hide blank filed or display blank field with cross icon.
 
 
-* [See the Live demos!&raquo;](http://paratheme.com/items/pricing-table-plugin-for-wordpress/)
+* [See the Live demo!&raquo;](http://pricing-table.com)
 * [Upgrade to Premium!&raquo;](http://paratheme.com/items/pricing-table-plugin-for-wordpress/)
 
 
