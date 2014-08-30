@@ -7,7 +7,7 @@
         
 <h3>Have any issue ?</h3>
 
-<p>Feel free to Contact with any issue for this plugin <a href="http://paratheme.com/contact/">http://paratheme.com/contact/</a>
+<p>Feel free to Contact with any issue for this plugin <a href="http://pricing-table.com/contact/">http://pricing-table.com/contact/</a>
 </p>
 <br />
 
@@ -43,7 +43,7 @@
 <br /><br />
 <h3>Get Premium Vesrion:</h3><br />
 <strong style="font-size:20px;">Price: $10(USD)</strong><br />
-Plugin Link: <a target="_blank" href="http://paratheme.com/items/pricing-table-plugin-for-wordpress/">http://paratheme.com/items/pricing-table-plugin-for-wordpress/</a><br /><br /> <br />
+Plugin Link: <a target="_blank" href="http://pricing-table.com/">http://pricing-table.com</a><br /><br /> <br />
 <img src="<?php echo  pricingtable_plugin_url; ?>/css/pricingtable-pro.png" />
 </p>
         
