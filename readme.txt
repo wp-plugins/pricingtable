@@ -26,7 +26,9 @@ Could be possible to generate hosting style pricing table grid, flat grid, hide 
 * [See Live demo!&raquo;](http://pricing-table.com)
 * [Documentation &raquo;](http://pricing-table.com/pricingtable-documentation/)
 
+<strong>Premium version available for this plugin</strong>
 
+* [PricingTable Premium !&raquo;](http://pricing-table.com)
 
 <strong>Plugin Features</strong><br />
 
@@ -46,8 +48,7 @@ Could be possible to generate hosting style pricing table grid, flat grid, hide 
 * Background Image for table area.
 
 
-<strong>Premium version available for this plugin</strong>
-* [PricingTable Premium !&raquo;](http://pricing-table.com)
+
 
 
 == Installation ==
@@ -107,6 +108,7 @@ to display videos on column simplay insert video url as following:<br />
 	= 1.4 =
 	* 14/08/2014 -fix- Minor CSS issue fix.
 	* 14/08/2014 -new- Added New Theme Sonnet.
+
 	= 1.3 =
     * 13/08/2014 -feature- Added New Theme Rounded.
 	* 13/08/2014 -feature- Custom ribbons on setting page.
