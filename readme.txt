@@ -1,14 +1,14 @@
 === PricingTable ===
-	Contributors: paratheme
+	Contributors: wpkids
 	Donate link: 
 	Tags:  free pricing table, price table, pricing table, pricing table plugin, pricing tables, wordpress pricing table, pricing, pricing plugin, pricing grid, price grid
 	Requires at least: 3.8
 	Tested up to: 4.0
-	Stable tag: 1.5
+	Stable tag: 1.6
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-	Responsive and mobile ready, HTML and CSS3 pricing table grid for your wordpress site.
+	PricingTable to display pricing grid on your WordPress site.
 
 == Description ==
 
@@ -23,8 +23,9 @@ Variety of support for style, themes and table items to display as your needs.
 Could be possible to generate hosting style pricing table grid, flat grid, hide blank filed or display blank field with cross icon.
 
 
-* [See the Live demo!&raquo;](http://pricing-table.com)
-* [Upgrade to Premium!&raquo;](http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/)
+* [See the Live demos!&raquo;](http://pricing-table.com/premium-pricing-table-plugin-for-wordpress)
+* [Documentation &raquo;](http://pricing-table.com/pricingtable-documentation/)
+
 
 
 <strong>Plugin Features</strong><br />
@@ -44,9 +45,8 @@ Could be possible to generate hosting style pricing table grid, flat grid, hide 
 * Tool-tip text anywhere.
 * Background Image for table area.
 
-<br />
-<strong>Video Tutorial Here.</strong>
-https://www.youtube.com/watch?v=h3StmDVu5tE
+
+
 
 == Installation ==
 
@@ -94,24 +94,26 @@ to display videos on column simplay insert video url as following:<br />
 == Changelog ==
 
 
+	= 1.6 =
+    * 15/09/2014 - fix - Update all code.
+    * 15/09/2014 - fix - remove li and ul and replace with div element.
 
 	= 1.5 =
-    * 27/08/2014 Update plugin description.
-	* 27/08/2014 Added Video Tutorial.
+    * 27/08/2014 -new- Update plugin description.
+	* 27/08/2014 -new- Added Video Tutorial.
 	
 	= 1.4 =
-    * 14/08/2014 Added New Theme Sonnet.
-	* 14/08/2014 Minor CSS issue fix.
+	* 14/08/2014 -fix- Minor CSS issue fix.
 
 	= 1.3 =
-    * 13/08/2014 Added New Theme Rounded.
-	* 13/08/2014 Custom ribbons on setting page.
+    * 13/08/2014 -feature- Added New Theme Rounded.
+	* 13/08/2014 -feature- Custom ribbons on setting page.
 
 	= 1.2 =
-    * 07/08/2014 Added help page.
+    * 07/08/2014 -feature- Added help page.
 
 	= 1.1 =
-    * 07/08/2014 Added option for background image.
+    * 07/08/2014 -feature- Added option for background image.
 	
 	= 1.0 =
     * 22/07/2014 Initial release.

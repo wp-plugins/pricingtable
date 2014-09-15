@@ -33,12 +33,15 @@ function pricingtable_body_flat($post_id)
 		$pricingtable_cell_header_description = get_post_meta( $post_id, 'pricingtable_cell_header_description', true );
 		$pricingtable_cell_header_image = get_post_meta( $post_id, 'pricingtable_cell_header_image', true );
 		$pricingtable_cell_header_bg_color = get_post_meta( $post_id, 'pricingtable_cell_header_bg_color', true );
-		$pricingtable_cell_header_text = get_post_meta( $post_id, 'pricingtable_cell_header_text', true );		
+		$pricingtable_cell_header_text = get_post_meta( $post_id, 'pricingtable_cell_header_text', true );
+		$pricingtable_cell_header_text_font_size = get_post_meta( $post_id, 'pricingtable_cell_header_text_font_size', true );		
 
 		$pricingtable_cell_price_duration = get_post_meta( $post_id, 'pricingtable_cell_price_duration', true );
 		$pricingtable_cell_price = get_post_meta( $post_id, 'pricingtable_cell_price', true );
 		$pricingtable_cell_price_bg_color = get_post_meta( $post_id, 'pricingtable_cell_price_bg_color', true );
-			
+		$pricingtable_cell_price_font_size = get_post_meta( $post_id, 'pricingtable_cell_price_font_size', true );
+
+
 		$pricingtable_cell_signup_bg_color = get_post_meta( $post_id, 'pricingtable_cell_signup_bg_color', true );
 		$pricingtable_cell_signup_button_bg_color = get_post_meta( $post_id, 'pricingtable_cell_signup_button_bg_color', true );		
 		$pricingtable_cell_signup_name = get_post_meta( $post_id, 'pricingtable_cell_signup_name', true );
@@ -89,7 +92,17 @@ function pricingtable_body_flat($post_id)
 						if(empty($pricingtable_cell_signup_bg_color[$j]))
 					  		{
 								$pricingtable_cell_signup_bg_color[$j] = "";
-							}							
+							}
+						if(empty($pricingtable_cell_header_text_font_size[$j]))
+					  		{
+								$pricingtable_cell_header_text_font_size[$j] = "";
+							}
+						if(empty($pricingtable_cell_price_font_size[$j]))
+					  		{
+								$pricingtable_cell_price_font_size[$j] = "";
+							}
+							
+							
 							
 						if(empty($pricingtable_cell_signup_name[$j]))
 					  		{
@@ -103,11 +116,11 @@ function pricingtable_body_flat($post_id)
 							
 					
 					  
-					$pricingtable_body.=  '<ul style="width:'.$pricingtable_column_width[$j].'px;" class="pricingtable-columns-container '.$pricingtable_featured.' column-hover-effect">';
+					$pricingtable_body.=  '<div  style="width:'.$pricingtable_column_width[$j].'px;" class="pricingtable-columns-container '.$pricingtable_featured.' column-hover-effect">';
 					
 					
-					$pricingtable_body.=  "<li class='pricingtable-columns' >";
-					$pricingtable_body.=  "<ul class='pricingtable-items-container'>";
+					$pricingtable_body.=  "<div class='pricingtable-columns' >";
+					$pricingtable_body.=  "<div  class='pricingtable-items-container'>";
 					
 					$i = 1;
 					while($i<=$pricingtable_total_row)
@@ -131,7 +144,7 @@ function pricingtable_body_flat($post_id)
 							if($i == 1)
 								{
 									
-									$pricingtable_body.=  '<li style=" background-color:'.$pricingtable_cell_header_bg_color[$j].'" class="pricingtable-items pricingtable-header">';
+									$pricingtable_body.=  '<div style=" background-color:'.$pricingtable_cell_header_bg_color[$j].'" class="pricingtable-items pricingtable-header">';
 									
 									if(empty($pricingtable_ribbons[$pricingtable_column_ribbon[$j]]))
 										{
@@ -150,7 +163,7 @@ function pricingtable_body_flat($post_id)
 
 									
 									
-									$pricingtable_body.=  "<span class='pricingtable-header-name'>".$pricingtable_cell_header_text[$j]."</span>";
+									$pricingtable_body.=  '<span style=" font-size:'.$pricingtable_cell_header_text_font_size[$j].';" class="pricingtable-header-name">'.$pricingtable_cell_header_text[$j].'</span>';
 									
 									if(!empty($pricingtable_cell_header_description[$j]))
 										{
@@ -191,14 +204,14 @@ function pricingtable_body_flat($post_id)
 
 									
 									
-									$pricingtable_body.=  "</li>";
+									$pricingtable_body.=  "</div>";
 								}
 								
 							elseif($i == 2)
 								{
-									$pricingtable_body.=  '<li  style=" background-color:'.$pricingtable_cell_price_bg_color[$j].'" class="pricingtable-items pricingtable-price">';
+									$pricingtable_body.=  '<div  style=" background-color:'.$pricingtable_cell_price_bg_color[$j].'" class="pricingtable-items pricingtable-price">';
 									
-									$pricingtable_body.=  "<span class='pricingtable-price-value'>".$pricingtable_cell_price[$j]."</span>";
+									$pricingtable_body.=  "<span style='font-size:".$pricingtable_cell_price_font_size[$j].";line-height:".$pricingtable_cell_price_font_size[$j].";' class='pricingtable-price-value'>".$pricingtable_cell_price[$j]."</span>";
 									
 									if(!empty($pricingtable_cell_price_duration[$j]))
 										{
@@ -206,7 +219,7 @@ function pricingtable_body_flat($post_id)
 										}
 									
 									
-									$pricingtable_body.=  "</li>";
+									$pricingtable_body.=  "</div>";
 								}
 								
 							elseif($i == $pricingtable_total_row)
@@ -222,9 +235,9 @@ function pricingtable_body_flat($post_id)
 									
 									
 									
-									$pricingtable_body.=  '<li style=" background-color:'.$pricingtable_cell_signup_bg_color[$j].'" class="pricingtable-items pricingtable-signup">';
+									$pricingtable_body.=  '<div style=" background-color:'.$pricingtable_cell_signup_bg_color[$j].'" class="pricingtable-items pricingtable-signup">';
 									$pricingtable_body.=  '<a style=" background-color:'.$pricingtable_cell_signup_button_bg_color[$j].'" class="pricingtable-signup-name" href="'.$pricingtable_cell_signup_url[$j].'">'.$pricingtable_cell_signup_name[$j].'</a>';
-									$pricingtable_body.=  "</li>";
+									$pricingtable_body.=  "</div>";
 								}								
 																
 							else
@@ -232,13 +245,13 @@ function pricingtable_body_flat($post_id)
 									
 									if($i%2 == 0)
 										{
-									$pricingtable_body.=  "<li class='pricingtable-items pricingtable-items-even'>".$pricingtable_cell[$i.$j];
-									$pricingtable_body.=  "</li>";
+									$pricingtable_body.=  "<div class='pricingtable-items pricingtable-items-even'>".$pricingtable_cell[$i.$j];
+									$pricingtable_body.=  "</div>";
 										}
 									else
 										{
-									$pricingtable_body.=  "<li class='pricingtable-items pricingtable-items-odd'>".$pricingtable_cell[$i.$j];
-									$pricingtable_body.=  "</li>";
+									$pricingtable_body.=  "<div class='pricingtable-items pricingtable-items-odd'>".$pricingtable_cell[$i.$j];
+									$pricingtable_body.=  "</div>";
 										}
 
 								}
@@ -249,9 +262,9 @@ function pricingtable_body_flat($post_id)
 						$i++;
 						}
 						
-					$pricingtable_body.=  "</ul>";
-					$pricingtable_body.=  "</li>";
-					$pricingtable_body.=  "</ul>";
+					$pricingtable_body.=  "</div >";
+					$pricingtable_body.=  "</div>";
+					$pricingtable_body.=  "</div >";
 					
 					$j++;
 				  }

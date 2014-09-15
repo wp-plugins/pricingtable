@@ -86,18 +86,20 @@ function meta_boxes_pricingtable_input( $post ) {
 	
 	$pricingtable_cell_price_duration = get_post_meta( $post->ID, 'pricingtable_cell_price_duration', true );
 	$pricingtable_cell_price = get_post_meta( $post->ID, 'pricingtable_cell_price', true );
-	$pricingtable_cell_price_bg_color = get_post_meta( $post->ID, 'pricingtable_cell_price_bg_color', true );	
+	$pricingtable_cell_price_bg_color = get_post_meta( $post->ID, 'pricingtable_cell_price_bg_color', true );
+	$pricingtable_cell_price_font_size = get_post_meta( $post->ID, 'pricingtable_cell_price_font_size', true );		
 	
 	$pricingtable_cell_signup_bg_color = get_post_meta( $post->ID, 'pricingtable_cell_signup_bg_color', true );
 	$pricingtable_cell_signup_button_bg_color = get_post_meta( $post->ID, 'pricingtable_cell_signup_button_bg_color', true );
 	$pricingtable_cell_signup_name = get_post_meta( $post->ID, 'pricingtable_cell_signup_name', true );
 	$pricingtable_cell_signup_url = get_post_meta( $post->ID, 'pricingtable_cell_signup_url', true );
 	
+	
 	$pricingtable_cell_header_description = get_post_meta( $post->ID, 'pricingtable_cell_header_description', true );	
 	$pricingtable_cell_header_image = get_post_meta( $post->ID, 'pricingtable_cell_header_image', true );
 	$pricingtable_cell_header_bg_color = get_post_meta( $post->ID, 'pricingtable_cell_header_bg_color', true );
-	$pricingtable_cell_header_text = get_post_meta( $post->ID, 'pricingtable_cell_header_text', true );	
-	
+	$pricingtable_cell_header_text = get_post_meta( $post->ID, 'pricingtable_cell_header_text', true );
+	$pricingtable_cell_header_text_font_size = get_post_meta( $post->ID, 'pricingtable_cell_header_text_font_size', true );	
 
    ?>
 
@@ -139,12 +141,10 @@ function meta_boxes_pricingtable_input( $post ) {
         <strong>Price table Themes</strong><br /><br /> 
         
         <select name="pricingtable_themes" >
-        	<option value="flat" <?php if($pricingtable_themes=="flat")echo "selected"; ?>>Flat</option>
-        	<option value="rounded" <?php if($pricingtable_themes=="rounded")echo "selected"; ?>>Rounded</option>
-            <option value="sonnet" <?php if($pricingtable_themes=="sonnet")echo "selected"; ?>>Sonnet</option>
+        	<option class="pricingtable_themes-flat" value="flat" <?php if($pricingtable_themes=="flat")echo "selected"; ?>>Flat</option>
             
-            
-            
+        	<option class="pricingtable_themes-rounded" value="rounded" <?php if($pricingtable_themes=="rounded")echo "selected"; ?>>Rounded</option>
+
         </select>
         
         </td>
@@ -186,7 +186,6 @@ jQuery(document).ready(function(jQuery)
         <td style="vertical-align:middle;">
         
         <strong>Price table Background Image</strong><br /><br /> 
-        
 
 <?php
 
@@ -303,8 +302,8 @@ jQuery(document).ready(function(jQuery)
 					jQuery(document).ready(function()
 						{
 
-							jQuery(".pricingtable_column_width, .pricingtable_cell_header_bg_color, .pricingtable_cell_price_bg_color, .pricingtable_cell_signup_bg_color").attr("title","Only For Premium Version")
-							jQuery(".pricingtable_column_width, .pricingtable_cell_header_bg_color, .pricingtable_cell_price_bg_color, .pricingtable_cell_signup_bg_color").attr("disabled","disabled")
+							jQuery(".pricingtable_column_width, .pricingtable_cell_header_bg_color, .pricingtable_cell_price_bg_color, .pricingtable_cell_signup_bg_color, .pricingtable_cell_header_text_font_size, .pricingtable_cell_price_font_size").attr("title","Only For Premium Version")
+							jQuery(".pricingtable_column_width, .pricingtable_cell_header_bg_color, .pricingtable_cell_price_bg_color, .pricingtable_cell_signup_bg_color, .pricingtable_cell_header_text_font_size, .pricingtable_cell_price_font_size").attr("disabled","disabled")
 						
 						})
 	 				</script>';
@@ -434,35 +433,17 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 										$pricingtable_column_ribbon[$i] = "";
 									}
 								$pricingtable_admin_cell .=  '<option value="none" '.(($pricingtable_column_ribbon[$i]=="none" ) ? "selected" : "").' >None</option>';
-								$pricingtable_admin_cell .=  '<option value="free" '.(($pricingtable_column_ribbon[$i]=="free" ) ? "selected" : "").' >Free</option>';
-								$pricingtable_admin_cell .=  '<option value="save" '.(($pricingtable_column_ribbon[$i]=="save" ) ? "selected" : "").' >Save</option>';								
-								$pricingtable_admin_cell .=  '<option value="hot" '.(($pricingtable_column_ribbon[$i]=="hot" ) ? "selected" : "").' >Hot</option>';
-								$pricingtable_admin_cell .=  '<option value="pro" '.(($pricingtable_column_ribbon[$i]=="pro" ) ? "selected" : "").' >Pro</option>';								
+								
 								$pricingtable_admin_cell .=  '<option value="best" '.(($pricingtable_column_ribbon[$i]=="best" ) ? "selected" : "").' >Best</option>';
+								
+								$pricingtable_admin_cell .=  '<option value="free" '.(($pricingtable_column_ribbon[$i]=="free" ) ? "selected" : "").' >Free</option>';
+								
+								$pricingtable_admin_cell .=  '<option value="fresh" '.(($pricingtable_column_ribbon[$i]=="fresh" ) ? "selected" : "").' >Fresh</option>';
+								
 								$pricingtable_admin_cell .=  '<option value="gift" '.(($pricingtable_column_ribbon[$i]=="gift" ) ? "selected" : "").' >Gift</option>';
-								$pricingtable_admin_cell .=  '<option value="sale" '.(($pricingtable_column_ribbon[$i]=="sale" ) ? "selected" : "").' >Sale</option>';																
-								$pricingtable_admin_cell .=  '<option value="new" '.(($pricingtable_column_ribbon[$i]=="new" ) ? "selected" : "").' >New</option>';	
-								$pricingtable_admin_cell .=  '<option value="top" '.(($pricingtable_column_ribbon[$i]=="top" ) ? "selected" : "").' >Top</option>';
-								$pricingtable_admin_cell .=  '<option value="fresh" '.(($pricingtable_column_ribbon[$i]=="fresh" ) ? "selected" : "").' >Fresh</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_10" '.(($pricingtable_column_ribbon[$i]=="dis_10" ) ? "selected" : "").' >-10%</option>';								
-								$pricingtable_admin_cell .=  '<option value="dis_20" '.(($pricingtable_column_ribbon[$i]=="dis_20" ) ? "selected" : "").' >-20%</option>';
-								$pricingtable_admin_cell .=  '<option value="dis_30" '.(($pricingtable_column_ribbon[$i]=="dis_30" ) ? "selected" : "").' >-30%</option>';
-								$pricingtable_admin_cell .=  '<option value="dis_40" '.(($pricingtable_column_ribbon[$i]=="dis_40" ) ? "selected" : "").' >-40%</option>';
-								
-								$pricingtable_admin_cell .=  '<option value="dis_50" '.(($pricingtable_column_ribbon[$i]=="dis_50" ) ? "selected" : "").' >-50%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_60" '.(($pricingtable_column_ribbon[$i]=="dis_60" ) ? "selected" : "").' >-60%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_70" '.(($pricingtable_column_ribbon[$i]=="dis_70" ) ? "selected" : "").' >-70%</option>';									
-								
-								$pricingtable_admin_cell .=  '<option value="dis_80" '.(($pricingtable_column_ribbon[$i]=="dis_80" ) ? "selected" : "").' >-80%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_90" '.(($pricingtable_column_ribbon[$i]=="dis_90" ) ? "selected" : "").' >-90%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_100" '.(($pricingtable_column_ribbon[$i]=="dis_100" ) ? "selected" : "").' >-100%</option>';									
-								
-									
+							
+								$pricingtable_admin_cell .=  '<option value="hot" '.(($pricingtable_column_ribbon[$i]=="hot" ) ? "selected" : "").' >Hot</option>';							
+
 							$pricingtable_admin_cell .=  '</select><br />';
 							
 							
@@ -480,7 +461,10 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 					$pricingtable_admin_cell .=  "<br />Header Description Text<br /><input class='pricingtable_cell_header_description' name='pricingtable_cell_header_description[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_description[$i]."' /><br />";
 					
 					
-						$pricingtable_admin_cell .=  "<br />Column Width<br /><input  class='pricingtable_column_width' name='pricingtable_column_width[".$i."]'  size='20' type='text' value='".$pricingtable_column_width[$i]."' /><br /></div>";						
+						$pricingtable_admin_cell .=  "<br />Column Width<br /><input  placeholder='200 Number only' class='pricingtable_column_width' name='pricingtable_column_width[".$i."]'  size='20' type='text' value='".$pricingtable_column_width[$i]."' /><br />";
+						
+						$pricingtable_admin_cell .=  "<br />Header Font Size<br /><input placeholder='35px'  class='pricingtable_cell_header_text_font_size' name='pricingtable_cell_header_text_font_size[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_text_font_size[$i]."' /><br />						
+						</div>";						
 
 					}
 					
@@ -514,35 +498,17 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 									}
 
 								$pricingtable_admin_cell .=  '<option value="none" '.(($pricingtable_column_ribbon[$i]=="none" ) ? "selected" : "").' >None</option>';
-								$pricingtable_admin_cell .=  '<option value="free" '.(($pricingtable_column_ribbon[$i]=="free" ) ? "selected" : "").' >Free</option>';
-								$pricingtable_admin_cell .=  '<option value="save" '.(($pricingtable_column_ribbon[$i]=="save" ) ? "selected" : "").' >Save</option>';								
-								$pricingtable_admin_cell .=  '<option value="hot" '.(($pricingtable_column_ribbon[$i]=="hot" ) ? "selected" : "").' >Hot</option>';
-								$pricingtable_admin_cell .=  '<option value="pro" '.(($pricingtable_column_ribbon[$i]=="pro" ) ? "selected" : "").' >Pro</option>';								
+								
 								$pricingtable_admin_cell .=  '<option value="best" '.(($pricingtable_column_ribbon[$i]=="best" ) ? "selected" : "").' >Best</option>';
+								
+								$pricingtable_admin_cell .=  '<option value="free" '.(($pricingtable_column_ribbon[$i]=="free" ) ? "selected" : "").' >Free</option>';
+								
+								$pricingtable_admin_cell .=  '<option value="fresh" '.(($pricingtable_column_ribbon[$i]=="fresh" ) ? "selected" : "").' >Fresh</option>';
+								
 								$pricingtable_admin_cell .=  '<option value="gift" '.(($pricingtable_column_ribbon[$i]=="gift" ) ? "selected" : "").' >Gift</option>';
-								$pricingtable_admin_cell .=  '<option value="sale" '.(($pricingtable_column_ribbon[$i]=="sale" ) ? "selected" : "").' >Sale</option>';																
-								$pricingtable_admin_cell .=  '<option value="new" '.(($pricingtable_column_ribbon[$i]=="new" ) ? "selected" : "").' >New</option>';	
-								$pricingtable_admin_cell .=  '<option value="top" '.(($pricingtable_column_ribbon[$i]=="top" ) ? "selected" : "").' >Top</option>';
-								$pricingtable_admin_cell .=  '<option value="fresh" '.(($pricingtable_column_ribbon[$i]=="fresh" ) ? "selected" : "").' >Fresh</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_10" '.(($pricingtable_column_ribbon[$i]=="dis_10" ) ? "selected" : "").' >-10%</option>';								
-								$pricingtable_admin_cell .=  '<option value="dis_20" '.(($pricingtable_column_ribbon[$i]=="dis_20" ) ? "selected" : "").' >-20%</option>';
-								$pricingtable_admin_cell .=  '<option value="dis_30" '.(($pricingtable_column_ribbon[$i]=="dis_30" ) ? "selected" : "").' >-30%</option>';
-								$pricingtable_admin_cell .=  '<option value="dis_40" '.(($pricingtable_column_ribbon[$i]=="dis_40" ) ? "selected" : "").' >-40%</option>';
-								
-								$pricingtable_admin_cell .=  '<option value="dis_50" '.(($pricingtable_column_ribbon[$i]=="dis_50" ) ? "selected" : "").' >-50%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_60" '.(($pricingtable_column_ribbon[$i]=="dis_60" ) ? "selected" : "").' >-60%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_70" '.(($pricingtable_column_ribbon[$i]=="dis_70" ) ? "selected" : "").' >-70%</option>';									
-								
-								$pricingtable_admin_cell .=  '<option value="dis_80" '.(($pricingtable_column_ribbon[$i]=="dis_80" ) ? "selected" : "").' >-80%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_90" '.(($pricingtable_column_ribbon[$i]=="dis_90" ) ? "selected" : "").' >-90%</option>';								
-								
-								$pricingtable_admin_cell .=  '<option value="dis_100" '.(($pricingtable_column_ribbon[$i]=="dis_100" ) ? "selected" : "").' >-100%</option>';									
-								
-									
+							
+								$pricingtable_admin_cell .=  '<option value="hot" '.(($pricingtable_column_ribbon[$i]=="hot" ) ? "selected" : "").' >Hot</option>';
+		
 							$pricingtable_admin_cell .=  '</select><br />';
 					
 					
@@ -559,7 +525,15 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 					
 					$pricingtable_admin_cell .=  "<br />Header Description Text<br /><input class='pricingtable_cell_header_description' name='pricingtable_cell_header_description[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_description[$i]."' /><br />";						
 					
-					$pricingtable_admin_cell .=  "<br />Column Width<br /><input class='pricingtable_column_width' name='pricingtable_column_width[".$i."]'  size='20' type='text' value='".$pricingtable_column_width[$i]."' /><br /></div>";	
+					$pricingtable_admin_cell .=  "<br />Column Width<br /><input  placeholder='200 Number only' class='pricingtable_column_width' name='pricingtable_column_width[".$i."]'  size='20' type='text' value='".$pricingtable_column_width[$i]."' /><br />";
+					
+					$pricingtable_admin_cell .=  "<br />Header Font Size<br /><input placeholder='35px' class='pricingtable_cell_header_text_font_size' name='pricingtable_cell_header_text_font_size[".$i."]'  size='20' type='text' value='".$pricingtable_cell_header_text_font_size[$i]."' /><br />					
+					
+					
+					</div>";	
+					
+					
+					
 					
 					}
 					
@@ -606,8 +580,9 @@ for($j=1; $j<=$pricingtable_total_row; $j++)
 					
 					$pricingtable_admin_cell .=  "<div title='Double click to expand or collapse' class='price-pack lock'>Price Background Color<br /><input class='pricingtable_cell_price_bg_color' name='pricingtable_cell_price_bg_color[".$i."]'  size='20' type='text' value='".$pricingtable_cell_price_bg_color[$i]."' /><br />";
 					
-					$pricingtable_admin_cell .=  "<br />Price Duration Text<br /><input placeholder='Pre Month' class='pricingtable_cell_price_duration' name='pricingtable_cell_price_duration[".$i."]'  size='20' type='text' value='".$pricingtable_cell_price_duration[$i]."' /></div><br />";	
+					$pricingtable_admin_cell .=  "<br />Price Duration Text<br /><input placeholder='Pre Month' class='pricingtable_cell_price_duration' name='pricingtable_cell_price_duration[".$i."]'  size='20' type='text' value='".$pricingtable_cell_price_duration[$i]."' /><br />";
 					
+					$pricingtable_admin_cell .=  "<br />Price Font Size<br /><input placeholder='35px' class='pricingtable_cell_price_font_size' name='pricingtable_cell_price_font_size[".$i."]'  size='20' type='text' value='".$pricingtable_cell_price_font_size[$i]."' /></div><br />";					
 					
 					$pricingtable_admin_cell .=  "<br />Column Price<br /><input placeholder='$20' name='pricingtable_cell_price[".$i."]' data_cell='".$j.$i."' size='20' type='text' value='".$pricingtable_cell_price[$i]."' /><br />";
 					
@@ -746,7 +721,7 @@ function meta_boxes_pricingtable_save( $post_id ) {
 	$pricingtable_cell_price_duration = stripslashes_deep( $_POST['pricingtable_cell_price_duration'] );
 	$pricingtable_cell_price = stripslashes_deep( $_POST['pricingtable_cell_price'] );
 	$pricingtable_cell_price_bg_color = stripslashes_deep( $_POST['pricingtable_cell_price_bg_color'] );		
-	
+	$pricingtable_cell_price_font_size = stripslashes_deep( $_POST['pricingtable_cell_price_font_size'] );	
 	
 	$pricingtable_cell_signup_bg_color = stripslashes_deep( $_POST['pricingtable_cell_signup_bg_color'] );
 	$pricingtable_cell_signup_button_bg_color = stripslashes_deep( $_POST['pricingtable_cell_signup_button_bg_color'] );		
@@ -757,7 +732,8 @@ function meta_boxes_pricingtable_save( $post_id ) {
 	$pricingtable_cell_header_description = stripslashes_deep( $_POST['pricingtable_cell_header_description'] );	
 	$pricingtable_cell_header_image = stripslashes_deep( $_POST['pricingtable_cell_header_image'] );	
 	$pricingtable_cell_header_bg_color = stripslashes_deep( $_POST['pricingtable_cell_header_bg_color'] );
-	$pricingtable_cell_header_text = stripslashes_deep( $_POST['pricingtable_cell_header_text'] );	
+	$pricingtable_cell_header_text = stripslashes_deep( $_POST['pricingtable_cell_header_text'] );
+	$pricingtable_cell_header_text_font_size = stripslashes_deep( $_POST['pricingtable_cell_header_text_font_size'] );	
 
   // Update the meta field in the database.
 	update_post_meta( $post_id, 'pricingtable_bg_img', $pricingtable_bg_img );	
@@ -773,7 +749,9 @@ function meta_boxes_pricingtable_save( $post_id ) {
 	
 	update_post_meta( $post_id, 'pricingtable_cell_price_duration',$pricingtable_cell_price_duration );
 	update_post_meta( $post_id, 'pricingtable_cell_price',$pricingtable_cell_price );
-	update_post_meta( $post_id, 'pricingtable_cell_price_bg_color',$pricingtable_cell_price_bg_color );	
+	update_post_meta( $post_id, 'pricingtable_cell_price_bg_color',$pricingtable_cell_price_bg_color );
+	update_post_meta( $post_id, 'pricingtable_cell_price_font_size',$pricingtable_cell_price_font_size );
+	
 	
 	update_post_meta( $post_id, 'pricingtable_cell_signup_bg_color',$pricingtable_cell_signup_bg_color );
 	update_post_meta( $post_id, 'pricingtable_cell_signup_button_bg_color',$pricingtable_cell_signup_button_bg_color );	
@@ -784,7 +762,8 @@ function meta_boxes_pricingtable_save( $post_id ) {
 	update_post_meta( $post_id, 'pricingtable_cell_header_description',$pricingtable_cell_header_description );	
 	update_post_meta( $post_id, 'pricingtable_cell_header_image',$pricingtable_cell_header_image );
 	update_post_meta( $post_id, 'pricingtable_cell_header_bg_color',$pricingtable_cell_header_bg_color );
-	update_post_meta( $post_id, 'pricingtable_cell_header_text',$pricingtable_cell_header_text );	
+	update_post_meta( $post_id, 'pricingtable_cell_header_text',$pricingtable_cell_header_text );
+	update_post_meta( $post_id, 'pricingtable_cell_header_text_font_size',$pricingtable_cell_header_text_font_size );	
   
 }
 add_action( 'save_post', 'meta_boxes_pricingtable_save' );
