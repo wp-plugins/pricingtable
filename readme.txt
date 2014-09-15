@@ -1,6 +1,6 @@
 === PricingTable ===
-	Contributors: wpkids
-	Donate link: 
+	Contributors: paratheme
+	Donate link: http://paratheme.com
 	Tags:  free pricing table, price table, pricing table, pricing table plugin, pricing tables, wordpress pricing table, pricing, pricing plugin, pricing grid, price grid
 	Requires at least: 3.8
 	Tested up to: 4.0
@@ -23,7 +23,7 @@ Variety of support for style, themes and table items to display as your needs.
 Could be possible to generate hosting style pricing table grid, flat grid, hide blank filed or display blank field with cross icon.
 
 
-* [See the Live demos!&raquo;](http://pricing-table.com/premium-pricing-table-plugin-for-wordpress)
+* [See the Live demo!&raquo;](http://pricing-table.com)
 * [Documentation &raquo;](http://pricing-table.com/pricingtable-documentation/)
 
 
