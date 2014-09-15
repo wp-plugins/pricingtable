@@ -145,6 +145,8 @@ function meta_boxes_pricingtable_input( $post ) {
             
         	<option class="pricingtable_themes-rounded" value="rounded" <?php if($pricingtable_themes=="rounded")echo "selected"; ?>>Rounded</option>
 
+        	<option class="pricingtable_themes-sonnet" value="sonnet" <?php if($pricingtable_themes=="sonnet")echo "selected"; ?>>Sonnet</option>
+
         </select>
         
         </td>

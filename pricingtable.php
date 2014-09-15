@@ -21,6 +21,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-functions.php
 
 require_once( plugin_dir_path( __FILE__ ) . 'themes/flat/index.php');
 require_once( plugin_dir_path( __FILE__ ) . 'themes/rounded/index.php');
+require_once( plugin_dir_path( __FILE__ ) . 'themes/sonnet/index.php');
 
 
 
@@ -43,6 +44,7 @@ function pricingtable_init_scripts()
 		// Style for themes
 		wp_enqueue_style('pricingtable-style-flat', pricingtable_plugin_url.'themes/flat/style.css');			
 		wp_enqueue_style('pricingtable-style-rounded', pricingtable_plugin_url.'themes/rounded/style.css');
+		wp_enqueue_style('pricingtable-style-sonnet', pricingtable_plugin_url.'themes/sonnet/style.css');		
 
 		//Style for font
 		

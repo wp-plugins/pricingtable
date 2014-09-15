@@ -95,6 +95,16 @@ function pricingtable_body_rounded($post_id)
 								$pricingtable_cell_signup_bg_color[$j] = "";
 							}							
 							
+						if(empty($pricingtable_cell_header_text_font_size[$j]))
+					  		{
+								$pricingtable_cell_header_text_font_size[$j] = "";
+							}
+						if(empty($pricingtable_cell_price_font_size[$j]))
+					  		{
+								$pricingtable_cell_price_font_size[$j] = "";
+							}
+							
+							
 						if(empty($pricingtable_cell_signup_name[$j]))
 					  		{
 								$pricingtable_cell_signup_name[$j] = '<span class="pt-cell-blank normal">&nbsp;</span>';
