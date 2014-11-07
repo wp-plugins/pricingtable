@@ -12,7 +12,7 @@
 
 == Description ==
 
-### PricingTable by http://pparatheme.com
+### PricingTable by http://paratheme.com
 
 <br />
 
