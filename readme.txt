@@ -12,7 +12,7 @@
 
 == Description ==
 
-### PricingTable by http://pricing-table.com
+### PricingTable by http://pparatheme.com
 
 <br />
 
@@ -28,7 +28,7 @@ Could be possible to generate hosting style pricing table grid, flat grid, hide 
 
 <strong>Premium version available for this plugin</strong>
 
-* [PricingTable Premium !&raquo;](http://pricing-table.com)
+* [PricingTable Premium !&raquo;](http://paratheme.com/items/pricing-table-plugin-for-wordpress/)
 
 <strong>Plugin Features</strong><br />
 
