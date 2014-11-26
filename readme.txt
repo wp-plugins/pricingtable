@@ -1,4 +1,4 @@
-=== PricingTable ===
+=== Pricing Table by ParaTheme.com ===
 	Contributors: paratheme
 	Donate link: http://paratheme.com
 	Tags:  free pricing table, price table, pricing table, pricing table plugin, pricing tables, wordpress pricing table, pricing, pricing plugin, pricing grid, price grid
