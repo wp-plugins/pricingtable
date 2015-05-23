@@ -1,10 +1,10 @@
-=== Pricing Table by ParaTheme.com ===
+=== PricingTable ===
 	Contributors: paratheme
 	Donate link: http://paratheme.com
 	Tags:  free pricing table, price table, pricing table, pricing table plugin, pricing tables, wordpress pricing table, pricing, pricing plugin, pricing grid, price grid
 	Requires at least: 3.8
-	Tested up to: 4.2
-	Stable tag: 1.6
+	Tested up to: 4.2.2
+	Stable tag: 1.7
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,7 +23,7 @@ Variety of support for style, themes and table items to display as your needs.
 Could be possible to generate hosting style pricing table grid, flat grid, hide blank filed or display blank field with cross icon.
 
 
-* [See Live demo!&raquo;](http://pricing-table.com)
+* [See Live demo!&raquo;](http://paratheme.com/demo/pricingtable/)
 * [Documentation &raquo;](http://pricing-table.com/pricingtable-documentation/)
 
 <strong>Premium version available for this plugin</strong>
@@ -96,6 +96,11 @@ to display videos on column simplay insert video url as following:<br />
 
 == Changelog ==
 
+
+
+	= 1.7 =
+    * 23/05/2015 - add - setting update.
+    * 23/05/2015 - add - ribbons added.
 
 	= 1.6 =
     * 15/09/2014 - fix - Update all code.

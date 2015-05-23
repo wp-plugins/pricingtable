@@ -3,15 +3,31 @@
 Plugin Name: PricingTable
 Plugin URI: http://pricing-table.com/product/premium-pricing-table-plugin-for-wordpress/
 Description: Long waited pricing table plugin for WordPress published to display pricing grid on your WordPress site.
-Version: 1.6
+Version: 1.7
 Author: wpkids
 Author URI: http://pricing-table.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+
 define('pricingtable_plugin_url', WP_PLUGIN_URL . '/' . plugin_basename( dirname(__FILE__) ) . '/' );
 define('pricingtable_plugin_dir', plugin_dir_path( __FILE__ ) );
+define('pricingtable_wp_url', 'https://wordpress.org/plugins/pricingtable/' );
+define('pricingtable_wp_reviews', 'https://wordpress.org/support/view/plugin-reviews/pricingtable/' );
+define('pricingtable_pro_url','http://paratheme.com/items/pricing-table-plugin-for-wordpress/' );
+define('pricingtable_demo_url', 'http://paratheme.com/demo/pricingtable/' );
+define('pricingtable_conatct_url', 'http://paratheme.com/contact' );
+define('pricingtable_qa_url', 'http://paratheme.com/qa/' );
+define('pricingtable_donate_url', 'http://paratheme.com/donate-us/' );
+define('pricingtable_plugin_name', 'PricingTable' );
+define('pricingtable_share_url', 'https://wordpress.org/plugins/pricingtable/' );
+define('pricingtable_tutorial_video_url', '//www.youtube.com/embed/h3StmDVu5tE?rel=0' );
+
+
+
+
+
 
 require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-meta.php');
 require_once( plugin_dir_path( __FILE__ ) . 'includes/pricingtable-functions.php');
@@ -40,6 +56,10 @@ function pricingtable_init_scripts()
 		wp_enqueue_script( 'pricingtable_color_picker', plugins_url('/js/color-picker.js', __FILE__ ), array( 'wp-color-picker' ), false, true );
 		
 
+		//ParaAdmin
+		wp_enqueue_style('ParaAdmin', pricingtable_plugin_url.'ParaAdmin/css/ParaAdmin.css');
+		//wp_enqueue_style('ParaIcons', pricingtable_plugin_url.'ParaAdmin/css/ParaIcons.css');		
+		wp_enqueue_script('ParaAdmin', plugins_url( 'ParaAdmin/js/ParaAdmin.js' , __FILE__ ) , array( 'jquery' ));
 		
 		// Style for themes
 		wp_enqueue_style('pricingtable-style-flat', pricingtable_plugin_url.'themes/flat/style.css');			
@@ -75,7 +95,7 @@ register_activation_hook(__FILE__, 'pricingtable_activation');
 
 function pricingtable_activation()
 	{
-		$pricingtable_version= "1.6";
+		$pricingtable_version= "1.7";
 		update_option('pricingtable_version', $pricingtable_version); //update plugin version.
 		
 		$pricingtable_customer_type= "free"; //customer_type "free"

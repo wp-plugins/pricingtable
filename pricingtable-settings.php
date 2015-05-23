@@ -26,6 +26,16 @@
 			<?php
 		} 
 	}
+	
+	
+	
+    $pricingtable_customer_type = get_option('pricingtable_customer_type');
+    $pricingtable_version = get_option('pricingtable_version');
+	
+	
+	
+	
+	
 ?>
 
 
@@ -34,74 +44,209 @@
 
 <div class="wrap">
 
-	<div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".__('PricingTable Settings')."</h2>";?>
+	<div id="icon-tools" class="icon32"><br></div><?php echo "<h2>".__(pricingtable_plugin_name.' Settings')."</h2>";?>
 		<form  method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
 	<input type="hidden" name="pricingtable_hidden" value="Y">
         <?php settings_fields( 'pricingtable_plugin_options' );
 				do_settings_sections( 'pricingtable_plugin_options' );
 			
 		?>
-<table class="form-table">
-
-
-
-
-
-	<tr valign="top">
-        <td style="vertical-align:middle;">
-        <strong>Ribbons</strong><br /><br /> 
-    	<span style=" color:#22aa5d;font-size: 12px;">You can use your own ribbons icon by inserting ribbon url to text field, image size for ribbons must be same as 90px × 24px</span>
-        <table>
         
-        	<tr>
-            <td>Best</td>
-            <td><img title="size - 90px * 24px " src="<?php if(empty($pricingtable_ribbons["best"])) echo pricingtable_plugin_url."css/ribbons/best.png";  else echo $pricingtable_ribbons["best"]; ?>"  /></td>
-            <td><input size="50%" name="pricingtable_ribbons[best]" type="text" value="<?php if(empty($pricingtable_ribbons["best"])) echo pricingtable_plugin_url."css/ribbons/best.png";  else echo $pricingtable_ribbons["best"]; ?>"  /></td>
-            </tr>
+        
+	<div class="para-settings">
+        <ul class="tab-nav"> 
+            <li nav="1" class="nav1 active">Options</li>
+            <li nav="2" class="nav2">Help</li>
+        </ul> <!-- tab-nav end -->
+    
+		<ul class="box">
+            <li style="display: block;" class="box1 tab-box active">
+				<div class="option-box">
+                    <p class="option-title">Ribbons</p>
+                    <p class="option-info">You can use your own ribbons icon by inserting ribbon url to text field, image size for ribbons must be same as 90px × 24px</p>
+                 	<table>
+                    
+                    <?php 
+					
+					
+					
+								$pricingtable_ribbons_des = array(	
+					
+											
+											
+														'dis-10'=>'Discount 10%',
+														'dis-20'=>'Discount 20%',												
+														'dis-30'=>'Discount 30%',													
+														'dis-40'=>'Discount 40%',
+														'dis-50'=>'Discount 50%',
+														'dis-60'=>'Discount 60%',											
+														'dis-70'=>'Discount 70%',													
+														'dis-80'=>'Discount 80%',
+														'dis-90'=>'Discount 90%',
+														'dis-100'=>'Discount 100%',	
+														'free'=>'Free',
+														'fresh'=>'Fresh',						
+														'gift'=>'Gift',												
+														'hot'=>'Hot',													
+														'new'=>'New',
+														'top'=>'Top',						
+														'save'=>'Save',												
+														'sale'=>'Sale',	
+														'pro'=>'Pro',
+														'best'=>'Best',	
+											
+											
+											
+											
+											
+											
+											
+														);	
+					
+					
+					
+					
+					
+					
+					
+					
+						if(empty($pricingtable_ribbons))
+							{
+								$pricingtable_ribbons = array(	
+														'dis-10'=>'dis-10',
+														'dis-20'=>'dis-20',												
+														'dis-30'=>'dis-30',													
+														'dis-40'=>'dis-40',
+														'dis-50'=>'dis-50',
+														'dis-60'=>'dis-60',											
+														'dis-70'=>'dis-70',													
+														'dis-80'=>'dis-80',
+														'dis-90'=>'dis-90',
+														'dis-100'=>'dis-100',	
+														'free'=>'free',
+														'fresh'=>'fresh',						
+														'gift'=>'gift',												
+														'hot'=>'hot',													
+														'new'=>'new',
+														'top'=>'top',						
+														'save'=>'save',												
+														'sale'=>'sale',	
+														'pro'=>'pro',
+														'best'=>'best',						
+											
+														);
+														
+														
+														
+														
+							foreach($pricingtable_ribbons as $key =>$value)
+								{
+									echo '<tr>';
+									echo '<td width="120">'.$pricingtable_ribbons_des[$key].'</td>';
+									echo '<td width="120"><img src="'.pricingtable_plugin_url.'css/ribbons/'.$value.'.png" /></td>';															
+									echo '<td width="320"><input class="pricingtable_ribbons" name="pricingtable_ribbons['.$key.']" type="text" value="'.pricingtable_plugin_url.'css/ribbons/'.$value.'.png"</td>';
+									echo '</tr>';
+									
+								}
+														
+														
+							}
+						else
+							{
+						foreach($pricingtable_ribbons as $key =>$value)
+							{
+								echo '<tr>';
+								echo '<td width="120">'.$pricingtable_ribbons_des[$key].'</td>';
+								echo '<td width="120"><img src="'.$value.'" /></td>';															
+								echo '<td width="320"><input size="30" class="pricingtable_ribbons" name="pricingtable_ribbons['.$key.']" type="text" value="'.$value.'"</td>';
+								echo '</tr>';
+								
+							}
+							}
 
+							
+							
 
+						
+						
+					?>
+                    	
+                        
+                        
+                        
+                    </table>
+                </div>
+                
+				<div class="option-box">
+                    <p class="option-title"></p>
+                    <p class="option-info"></p>
+                 
+                </div>
 
+            </li>
+            <li style="display: none;" class="box2 tab-box">
+            
+				<div class="option-box">
+                    <p class="option-title">Need Help ?</p>
+                    <p class="option-info">Feel free to contact with any issue for this plugin, Ask any question via forum <a href="<?php echo pricingtable_qa_url; ?>"><?php echo pricingtable_qa_url; ?></a> <strong style="color:#139b50;">(free)</strong><br />
 
-        	<tr>
-            <td>Free</td>
-            <td><img title="size - 90px × 24px " src="<?php if(empty($pricingtable_ribbons["free"])) echo pricingtable_plugin_url."css/ribbons/free.png";  else echo $pricingtable_ribbons["free"]; ?>"  /></td>
-            <td><input size="50%" name="pricingtable_ribbons[free]" type="text" value="<?php if(empty($pricingtable_ribbons["free"])) echo pricingtable_plugin_url."css/ribbons/free.png";  else echo $pricingtable_ribbons["free"]; ?>"  /></td>
-            </tr>
+    <?php
 
+    if($pricingtable_customer_type=="free")
+        {
+    
+            echo 'You are using <strong> '.$pricingtable_customer_type.' version  '.$pricingtable_version.'</strong> of <strong>'.pricingtable_plugin_name.'</strong>, To get more feature you could try our premium version. ';
+            
+            echo '<br /><a href="'.pricingtable_pro_url.'">'.pricingtable_pro_url.'</a>';
+            
+        }
+    else
+        {
+    
+            echo 'Thanks for using <strong> premium version  '.$pricingtable_version.'</strong> of <strong>'.pricingtable_plugin_name.'</strong> ';	
+            
+            
+        }
+    
+     ?>       
 
+                    
+                    </p>
 
-        	<tr>
-            <td>Fresh</td>
-            <td><img title="size - 90px × 24px " src="<?php if(empty($pricingtable_ribbons["fresh"])) echo pricingtable_plugin_url."css/ribbons/fresh.png";  else echo $pricingtable_ribbons["fresh"]; ?>"  /></td>
-            <td><input size="50%" name="pricingtable_ribbons[fresh]" type="text" value="<?php if(empty($pricingtable_ribbons["fresh"])) echo pricingtable_plugin_url."css/ribbons/fresh.png";  else echo $pricingtable_ribbons["fresh"]; ?>"  /></td>
-            </tr>
+                </div>
+				<div class="option-box">
+                    <p class="option-title">Submit Reviews...</p>
+                    <p class="option-info">We are working hard to build some awesome plugins for you and spend thousand hour for plugins. we wish your three(3) minute by submitting five star reviews at wordpress.org. if you have any issue please submit at forum.</p>
+                	<img class="pricingtable-pro-pricing" src="<?php echo pricingtable_plugin_url."css/five-star.png";?>" /><br />
+                    <a target="_blank" href="<?php echo pricingtable_wp_reviews; ?>">
+                		<?php echo pricingtable_wp_reviews; ?>
+               		</a>
+                    
+                    
+                    
+                </div>
+				<div class="option-box">
+                    <p class="option-title">Please Share</p>
+                    <p class="option-info">If you like this plugin please share with your social share network.</p>
+                    <?php
+                    
+						echo pricingtable_share_plugin();
+					?>
+                </div>
+				<div class="option-box">
+                    <p class="option-title">Video Tutorial</p>
+                    <p class="option-info">Please watch this video tutorial.</p>
+                	<iframe width="640" height="480" src="<?php echo pricingtable_tutorial_video_url; ?>" frameborder="0" allowfullscreen></iframe>
+                </div>
+            
+            
+            </li>  
 
-
-        	<tr>
-            <td>Gift</td>
-            <td><img title="size - 90px × 24px " src="<?php if(empty($pricingtable_ribbons["gift"])) echo pricingtable_plugin_url."css/ribbons/gift.png";  else echo $pricingtable_ribbons["gift"]; ?>"  /></td>
-            <td><input size="50%" name="pricingtable_ribbons[gift]" type="text" value="<?php if(empty($pricingtable_ribbons["gift"])) echo pricingtable_plugin_url."css/ribbons/gift.png";  else echo $pricingtable_ribbons["gift"]; ?>"  /></td>
-            </tr>
-
-
-
-        	<tr>
-            <td>Hot</td>
-            <td><img title="size - 90px × 24px " src="<?php if(empty($pricingtable_ribbons["hot"])) echo pricingtable_plugin_url."css/ribbons/hot.png";  else echo $pricingtable_ribbons["hot"]; ?>"  /></td>
-            <td><input size="50%" name="pricingtable_ribbons[hot]" type="text" value="<?php if(empty($pricingtable_ribbons["hot"])) echo pricingtable_plugin_url."css/ribbons/hot.png";  else echo $pricingtable_ribbons["hot"]; ?>"  /></td>
-            </tr>
-
-          
-        </table>
+        </ul>
     
     
     
-    
-        </td>
-    </tr>
-</table>
-
-
+    </div>    
 
 
 
